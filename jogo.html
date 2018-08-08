@@ -1,0 +1,43 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="layout.css" />
+    <link rel="shortcut icon" href="img/hash.ico" type="image/x-icon"></head>
+<body>
+    <div id="jogo">
+        <div id="jogo-interno">
+          
+          <div id="feedbacks">
+            Jogador: X
+            </div>
+                  
+             <div class="tabuleiro">
+                <table>
+                    <tr>
+                        <td onclick="marcar('casa11')"><img id="casa11" class="casa11"></td>
+                        <td onclick="marcar('casa12')"><img id="casa12" class="casa12"></td>
+                        <td onclick="marcar('casa13')"><img id="casa13" class="casa13"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="marcar('casa21')"><img id="casa21" class="casa21"></td>
+                        <td onclick="marcar('casa22')"><img id="casa22" class="casa22"></td>
+                        <td onclick="marcar('casa23')"><img id="casa23" class="casa23"></td>
+                    </tr>
+                    <tr class="baixo">
+                        <td onclick="marcar('casa31')"><img id="casa31" class="casa31"></td>
+                        <td onclick="marcar('casa32')"><img id="casa32" class="casa32"></td>
+                        <td onclick="marcar('casa33')"><img id="casa33" class="casa33"></td>
+                    </tr>
+                    </table>
+                </div>
+          
+                <div class="botao">
+                    <button onclick="novo_jogo();">Novo jogo</button>
+                </div>
+            </div>       
+        </div>
+    <script src="script.js"></script>   
+</body>
+</html>
