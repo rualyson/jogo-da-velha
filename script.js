@@ -1,5 +1,5 @@
 var tabuleiro = [];
-var jogadores = ["X","Bola"];
+var jogadores = ["Estrela","Bola"];
 var vez = jogadores[0];
 var status = "jogando";
 var rodadas = 0;
