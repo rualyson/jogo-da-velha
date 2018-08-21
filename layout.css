@@ -1,5 +1,5 @@
 body {
-    background: #0a0a0a;
+    background: #ffffff;
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
     margin:0;
     padding:0;
@@ -7,6 +7,7 @@ body {
   
   #jogo {
     font-family: Arial, sans-serif;
+    font-style: bold;
     color: rgb(252, 255, 255);
     text-align:center;
     position:absolute;
@@ -15,19 +16,17 @@ body {
     transform: translateY(-50%);
   }
   
-  #jogo-interno {
+  #play {
     width: 450px;
-    margin: 0 auto;
+    margin: 10 auto;
     padding: 2em;
     perspective: 300px;
   }
   
   .tabuleiro {
     margin: 0 auto;
-    width: 310px;
-    height: 320px;
-    text-decoration: none;
-    box-shadow: 2px 2px 15px rgba(250, 3, 3, 0.6);
+    width: 320px;
+    height: 310px;
     transform: rotateX(5deg) translateY(-25px);
   }
   
@@ -46,28 +45,32 @@ body {
   }
   
   .tabuleiro table tr td:first-child {
-      border-bottom: 10px groove #fff;
-      border-right: 10px groove #fff;
+      border-bottom: 10px groove gray;
+      border-right: 10px groove gray;
+      border-radius: 5px;
   }
   
   .tabuleiro table tr td:last-child {
-      border-bottom: 10px groove #fff;
+      border-bottom: 10px groove gray;
+      border-radius: 5px;
   } 
   
   .tabuleiro table tr td:nth-child(2) {
-      border-bottom: 10px groove #fff;
-      border-right: 10px groove #fff;
+      border-bottom: 10px groove gray;
+      border-right: 10px groove gray;
+      border-radius: 5px;
   }
   
-  .tabuleiro .baixo td{
-      border-bottom: none !important;
-  }
+  .tabuleiro .none td{
+    border-bottom: none !important;
+}
   
-  #feedbacks, .botao {
+  #resultado, .botao {
     font-size: 2em;
     color: #fff;
     margin-top: 25px;
     margin-bottom: 2em;
-    background: red;
+    background: rgb(54, 54, 54);
+    border-radius: 7px;
     
   }

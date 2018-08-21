@@ -2,40 +2,40 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Jogo da Velha</title>
+    <title>Jogo da Velha - Instagram ou Snapchat?</title>
     <link rel="stylesheet" type="text/css" media="screen" href="layout.css" />
     <link rel="shortcut icon" href="img/hash.ico" type="image/x-icon"></head>
 <body>
     
     <div id="jogo">
-        <div id="jogo-interno">
+        <div id="play">
             <h2>Boa sorte!</h2>
-          <div id="feedbacks">
-            Jogador: Estrela
+          <div id="resultado">
+            Player: Instagram
             </div>
                   
              <div class="tabuleiro">
                 <table>
                     <tr>
-                        <td onclick="marcar('casa11')"><img id="casa11" class="casa11"></td>
-                        <td onclick="marcar('casa12')"><img id="casa12" class="casa12"></td>
-                        <td onclick="marcar('casa13')"><img id="casa13" class="casa13"></td>
+                        <td onclick="fill('square1_1')"><img id="square1_1" class="square1_1"></td>
+                        <td onclick="fill('square1_2')"><img id="square1_2" class="square1_2"></td>
+                        <td onclick="fill('square1_3')"><img id="square1_3" class="square1_3"></td>
                     </tr>
                     <tr>
-                        <td onclick="marcar('casa21')"><img id="casa21" class="casa21"></td>
-                        <td onclick="marcar('casa22')"><img id="casa22" class="casa22"></td>
-                        <td onclick="marcar('casa23')"><img id="casa23" class="casa23"></td>
+                        <td onclick="fill('square2_1')"><img id="square2_1" class="square2_1"></td>
+                        <td onclick="fill('square2_2')"><img id="square2_2" class="square2_2"></td>
+                        <td onclick="fill('square2_3')"><img id="square2_3" class="square2_3"></td>
                     </tr>
-                    <tr class="baixo">
-                        <td onclick="marcar('casa31')"><img id="casa31" class="casa31"></td>
-                        <td onclick="marcar('casa32')"><img id="casa32" class="casa32"></td>
-                        <td onclick="marcar('casa33')"><img id="casa33" class="casa33"></td>
+                    <tr class="none">
+                        <td onclick="fill('square3_1')"><img id="square3_1" class="square3_1"></td>
+                        <td onclick="fill('square3_2')"><img id="square3_2" class="square3_2"></td>
+                        <td onclick="fill('square3_3')"><img id="square3_3" class="square3_3"></td>
                     </tr>
                     </table>
                 </div>
           
                 <div class="botao">
-                    <button onclick="novo_jogo();">Novo jogo</button>
+                    <button onclick="novo_jogo();">RESTART</button>
                 </div>
             </div>       
         </div>

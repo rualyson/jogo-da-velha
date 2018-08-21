@@ -1,42 +1,42 @@
 var tabuleiro = [];
-var jogadores = ["Estrela","Bola"];
+var jogadores = ["instagram","snapchat"];
 var vez = jogadores[0];
 var status = "jogando";
 var rodadas = 0;
 
-function marcar(casa){
+function fill(square){
 
   console.log(rodadas);
 
     if(status != "finalizado"){
-        var imagem = document.getElementById(casa);
+        var imagem = document.getElementById(square);
         if(imagem.className != jogadores[0] && imagem.className != jogadores[1]){
-            imagem.classList.remove(casa);
+            imagem.classList.remove(square);
             imagem.classList.add(vez);
-            document.getElementById(casa).src = "img/"+vez+".png";
+            document.getElementById(square).src = "img/"+vez+".png";
             rodadas++;
 
-            if(rodadas == 9 && !verifica_ganhador()){
+            if(rodadas == 9 && !check()){
 
-              document.getElementById('feedbacks').innerHTML = "Empate!";
+              document.getElementById('resultado').innerHTML = "Empate!";
               status = "finalizado";
 
-            } else if(!verifica_ganhador()){
+            } else if(!check()){
 
                 if(vez == jogadores[0]){
                     vez = jogadores[1];
-                    document.getElementById('feedbacks').innerHTML = "Jogador: "+jogadores[1];
+                    document.getElementById('resultado').innerHTML = "Player: "+jogadores[1];
                 }else{
                     vez = jogadores[0];
-                    document.getElementById('feedbacks').innerHTML = "Jogador: "+jogadores[0];
+                    document.getElementById('resultado').innerHTML = "Player: "+jogadores[0];
                 }
 
             }else{
-                document.getElementById('feedbacks').innerHTML = "Parabéns "+vez+",você venceu!";
+                document.getElementById('resultado').innerHTML = "Player "+vez+",você venceu!";
                 status = "finalizado";
             }
         }else{
-            document.getElementById('feedbacks').innerHTML = "Casa já marcada... Tente outra!";
+            document.getElementById('resultado').innerHTML = "square já marcada... Tente outra!";
         }
     }
 }
@@ -44,28 +44,28 @@ function marcar(casa){
 function novo_jogo(){
     for (i=1; i<4; i++){
        for (j=1; j<4; j++){
-          casa = 'casa' + i + j
-           document.getElementById(casa).src = "";
-           document.getElementById(casa).className = "";
-           document.getElementById(casa).classList.add(casa);
+          square = 'square' + i + j
+           document.getElementById(square).src = "";
+           document.getElementById(square).className = "";
+           document.getElementById(square).classList.add(square);
       }
     }
-    document.getElementById('feedbacks').innerHTML = "Jogador: "+vez;
+    document.getElementById('resultado').innerHTML = "Player: "+vez;
     status = "jogando";
     rodadas = 0;
 }
 
-function verifica_ganhador(){
-   casa11 = document.getElementById('casa11').className;
-   casa12 = document.getElementById('casa12').className;
-   casa13 = document.getElementById('casa13').className;
-   casa21 = document.getElementById('casa21').className;
-   casa22 = document.getElementById('casa22').className;
-   casa23 = document.getElementById('casa23').className;
-   casa31 = document.getElementById('casa31').className;
-   casa32 = document.getElementById('casa32').className;
-   casa33 = document.getElementById('casa33').className;
-   if (((casa11 != '') && (casa12 != '') && (casa13 != '') && (casa11 == casa12) && (casa12 == casa13)) || ((casa11 != '') && (casa22 != '') && (casa33 != '') && (casa11 == casa22) && (casa22 == casa33)) || ((casa11 != '') && (casa21 != '') && (casa31 != '') && (casa11 == casa21) && (casa21 == casa31)) || ((casa21 != '') && (casa22 != '') && (casa23 != '') && (casa21 == casa22) && (casa22 == casa23)) || ((casa31 != '') && (casa32 != '') && (casa33 != '') && (casa31 == casa32) && (casa32 == casa33)) || ((casa12 != '') && (casa22 != '') && (casa32 != '') && (casa12 == casa22) && (casa22 == casa32)) || ((casa13 != '') && (casa23 != '') && (casa33 != '') && (casa13 == casa23) && (casa23 == casa33)) || ((casa31 != '') && (casa22 != '') && (casa13 != '') && (casa31 == casa22) && (casa22 == casa13))){
+function check(){
+   square1_1 = document.getElementById('square1_1').className;
+   square1_2 = document.getElementById('square1_2').className;
+   square1_3 = document.getElementById('square1_3').className;
+   square2_1 = document.getElementById('square2_1').className;
+   square2_2 = document.getElementById('square2_2').className;
+   square2_3 = document.getElementById('square2_3').className;
+   square3_1 = document.getElementById('square3_1').className;
+   square3_2 = document.getElementById('square3_2').className;
+   square3_3 = document.getElementById('square3_3').className;
+   if (((square1_1 != '') && (square1_2 != '') && (square1_3 != '') && (square1_1 == square1_2) && (square1_2 == square1_3)) || ((square1_1 != '') && (square2_2 != '') && (square3_3 != '') && (square1_1 == square2_2) && (square2_2 == square3_3)) || ((square1_1 != '') && (square2_1 != '') && (square3_1 != '') && (square1_1 == square2_1) && (square2_1 == square3_1)) || ((square2_1 != '') && (square2_2 != '') && (square2_3 != '') && (square2_1 == square2_2) && (square2_2 == square2_3)) || ((square3_1 != '') && (square3_2 != '') && (square3_3 != '') && (square3_1 == square3_2) && (square3_2 == square3_3)) || ((square1_2 != '') && (square2_2 != '') && (square3_2 != '') && (square1_2 == square2_2) && (square2_2 == square3_2)) || ((square1_3 != '') && (square2_3 != '') && (square3_3 != '') && (square1_3 == square2_3) && (square2_3 == square3_3)) || ((square3_1 != '') && (square2_2 != '') && (square1_3 != '') && (square3_1 == square2_2) && (square2_2 == square1_3))){
        return true;
    }else{
         return false;
