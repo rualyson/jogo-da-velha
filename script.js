@@ -1,5 +1,5 @@
 var tabuleiro = [];
-var jogadores = ["Estrela","Bola"];
+var jogadores = ["instagram","snapchat"];
 var vez = jogadores[0];
 var status = "jogando";
 var rodadas = 0;
@@ -25,14 +25,14 @@ function marcar(casa){
 
                 if(vez == jogadores[0]){
                     vez = jogadores[1];
-                    document.getElementById('feedbacks').innerHTML = "Jogador: "+jogadores[1];
+                    document.getElementById('feedbacks').innerHTML = "Player: "+jogadores[1];
                 }else{
                     vez = jogadores[0];
-                    document.getElementById('feedbacks').innerHTML = "Jogador: "+jogadores[0];
+                    document.getElementById('feedbacks').innerHTML = "Player: "+jogadores[0];
                 }
 
             }else{
-                document.getElementById('feedbacks').innerHTML = "Parabéns "+vez+",você venceu!";
+                document.getElementById('feedbacks').innerHTML = "Player "+vez+",você venceu!";
                 status = "finalizado";
             }
         }else{
@@ -50,7 +50,7 @@ function novo_jogo(){
            document.getElementById(casa).classList.add(casa);
       }
     }
-    document.getElementById('feedbacks').innerHTML = "Jogador: "+vez;
+    document.getElementById('feedbacks').innerHTML = "Player: "+vez;
     status = "jogando";
     rodadas = 0;
 }
