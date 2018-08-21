@@ -44,7 +44,7 @@ function fill(square){
 function novo_jogo(){
     for (i=1; i<4; i++){
        for (j=1; j<4; j++){
-          square = 'square' + i + j
+          square = 'square' + i + '_' + j
            document.getElementById(square).src = "";
            document.getElementById(square).className = "";
            document.getElementById(square).classList.add(square);
